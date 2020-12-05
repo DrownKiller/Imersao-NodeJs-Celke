@@ -25,7 +25,7 @@ mongoose.connect('mongodb://localhost/celke', {
 }).then(() => {
     console.log("Conexão com o BD MongoDB realizado com sucesso!");
 }).catch((err) => {
-    console.log("Erro Conexão com o BD MongoDB não realizado com sucesso: " + err);
+    console.log("Erro Conexão com o BD MongoDB não realizada: " + err);
 });
     
 
@@ -33,7 +33,7 @@ app.post('/orcamento', async (req, res) => {
     await Orcamento.create(req.body, (err) => {
         if(err) return res.status(400).json({
             error: true,
-            message: "Erro: Solicitação de orçamento não enviada com sucesso!"
+            message: "Erro: Solicitação de orçamento não enviada!"
         });
     });
 
